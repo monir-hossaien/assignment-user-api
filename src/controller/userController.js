@@ -93,7 +93,6 @@ export const deleteUser = async (req,res)=>{
 export const logout = async (req,res)=>{
     try {
         const userID = req.headers.id;
-        console.log(userID)
         const user = await User.findOne({_id: userID});
         if(!user){
             return res.status(401).json({error: 'User does not exist'});
